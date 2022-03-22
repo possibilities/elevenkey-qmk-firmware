@@ -4,36 +4,60 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* LAYER 0
  * ,-------------------------------.
- * |   A   |   B   |   C   |   D   |
+ * |  L1   | Prev  | Next  | Play  |
  * |-------+-------+-------+-------|
- * |   E   |   F   |   G   |   H   |
+ * |       |       |       |       |
  * |-------+-------+-------+-------|
- * |   I   |   J   |   K   |   L   |
+ * |       |       |       |       |
  * |-------+-------+-------+-------|
- * |   X   |       |       |       |
+ * |       |       |       |       |
  * `-------------------------------'
  */
 [0] = LAYOUT(
-  KC_A,       KC_B,      KC_C,      KC_D,
-  KC_E,       KC_F,      KC_G,      KC_H,
-  KC_I,       KC_J,      KC_K,      KC_L,
-  KC_X,       KC_NO,     KC_NO,     KC_NO
+  TG(1),       KC_MPRV,    KC_MNXT,    KC_MPLY,
+  KC_NO,       KC_NO,      KC_NO,      KC_NO,
+  KC_NO,       KC_NO,      KC_NO,      KC_NO,
+  KC_NO,       KC_NO,      KC_NO,      KC_NO
+),
+/* LAYER 1
+ * ,-------------------------------.
+ * |       |       |       |       |
+ * |-------+-------+-------+-------|
+ * |       |       |       |       |
+ * |-------+-------+-------+-------|
+ * |       |       |       |       |
+ * |-------+-------+-------+-------|
+ * |       |       |       |       |
+ * `-------------------------------'
+ */
+[1] = LAYOUT(
+  KC_TRNS,       KC_TRNS,      KC_TRNS,      KC_TRNS,
+  KC_TRNS,       KC_TRNS,      KC_TRNS,      KC_TRNS,
+  KC_TRNS,       KC_TRNS,      KC_TRNS,      KC_TRNS,
+  KC_TRNS,       KC_TRNS,      KC_TRNS,      KC_TRNS
 )
 };
 
 bool encoder_update_user(uint8_t index, bool clockwise) {
-    /* TODO */
     if (index == 0) { /* First encoder */
-        if (clockwise) {
-            tap_code(KC_A);
+        if (get_highest_layer(layer_state|default_layer_state) > 0) {
+          if (clockwise) {
+              tap_code_delay(KC_MS_WH_RIGHT, 10);
+          } else {
+              tap_code_delay(KC_MS_WH_LEFT, 10);
+          }
         } else {
-            tap_code(KC_B);
+          if (clockwise) {
+              tap_code_delay(KC_MS_WH_DOWN, 10);
+          } else {
+              tap_code_delay(KC_MS_WH_UP, 10);
+          }
         }
     } else if (index == 1) { /* Second encoder */
         if (clockwise) {
-            tap_code(KC_C);
+            tap_code_delay(KC_VOLU, 10);
         } else {
-            tap_code(KC_D);
+            tap_code_delay(KC_VOLD, 10);
         }
     }
     return false;
