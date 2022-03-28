@@ -2,7 +2,7 @@
   "name": "ElevenKey",
   "vendorId": "0xFEED",
   "productId": "0x1102",
-  "lighting": "qmk_rgblight",
+  "lighting": "none",
   "matrix": { "rows": 4, "cols": 4 },
   "layouts": {
     "keymap": [
