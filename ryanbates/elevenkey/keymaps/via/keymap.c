@@ -19,7 +19,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_NO,       KC_NO,      KC_NO,      KC_NO,
   KC_NO,       KC_NO,      KC_NO,      KC_NO
 ),
-/* LAYER 1
+/* LAYER 2-4
  * ,-------------------------------.
  * |       |       |       |       |
  * |-------+-------+-------+-------|
@@ -31,6 +31,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-------------------------------'
  */
 [1] = LAYOUT(
+  KC_TRNS,       KC_TRNS,      KC_TRNS,      KC_TRNS,
+  KC_TRNS,       KC_TRNS,      KC_TRNS,      KC_TRNS,
+  KC_TRNS,       KC_TRNS,      KC_TRNS,      KC_TRNS,
+  KC_TRNS,       KC_TRNS,      KC_TRNS,      KC_TRNS
+),
+[2] = LAYOUT(
+  KC_TRNS,       KC_TRNS,      KC_TRNS,      KC_TRNS,
+  KC_TRNS,       KC_TRNS,      KC_TRNS,      KC_TRNS,
+  KC_TRNS,       KC_TRNS,      KC_TRNS,      KC_TRNS,
+  KC_TRNS,       KC_TRNS,      KC_TRNS,      KC_TRNS
+),
+[3] = LAYOUT(
   KC_TRNS,       KC_TRNS,      KC_TRNS,      KC_TRNS,
   KC_TRNS,       KC_TRNS,      KC_TRNS,      KC_TRNS,
   KC_TRNS,       KC_TRNS,      KC_TRNS,      KC_TRNS,
