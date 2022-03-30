@@ -4,7 +4,7 @@ Firmware for macropad PCB made by [Ryan Bates](https://www.tindie.com/products/r
 
 ## Features
 
-The firmware is for an minimal and opinionated configuration of the PCB
+The firmware is for a minimal and opinionated configuration of the PCB
 
 * Vial support
   * Allows programming all keys and encoders with Vial UI
