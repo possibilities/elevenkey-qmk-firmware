@@ -14,3 +14,20 @@ The firmware is for an minimal and opinionated configuration of the PCB
     * Left encoder adjusts volume on layer 1
     * Right encoder scrolls up/down on layer 1
     * Right encoder scrolls left/right on layer 2
+
+## Usage
+
+These instructions assume you have [QMK CLI](https://github.com/qmk/qmk_cli) installed with the `qmk_firmware` directory in your home directory.
+
+#### 1. Symlink this repo
+
+```
+ln -sf /path/to/this/repo/ryanbates ~/qmk_firmware/keyboards/ryanbates
+```
+
+#### 2. Compile and flash
+
+```
+qmk compile -kb ryanbates/elevenkey -km default
+qmk flash -kb ryanbates/elevenkey -km default
+```
